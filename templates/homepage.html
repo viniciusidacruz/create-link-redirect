@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Inicio | ShortRedirect</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <main class="h-screen w-full flex items-center justify-center bg-zinc-50">
+      <section class="max-w-[520px] w-full">
+        <header class="mb-4">
+          <a href="/" class="text-2xl font-bold flex items-center">
+            <img
+              alt="Hiperlink"
+              class="w-10 mr-4"
+              src="{{ url_for('static', filename='assets/logo.png') }}"
+            />
+
+            Short<span class="text-orange-500">Redirect</span>
+          </a>
+        </header>
+
+        <form
+          method="POST"
+          actio="{{ url_for('home_page')}}"
+          class="bg-white w-full p-6 rounded-lg flex flex-col gap-4 shadow-xl"
+        >
+          <div>
+            <label
+              for="default_link"
+              class="font-semibold text-sm text-zinc-500"
+              >URL Original: <span class="text-red-400 font-bold">*</span>
+            </label>
+
+            <input
+              required
+              type="text"
+              id="default_link"
+              name="default_link"
+              placeholder="Digite sua url original..."
+              class="bg-gray-100 mt-2 border-none w-full p-4 rounded-lg outline-none"
+            />
+          </div>
+
+          <div>
+            <label class="font-semibold text-sm text-zinc-400"
+              >URL base:
+            </label>
+
+            <input
+              disabled
+              type="text"
+              name="default_link"
+              placeholder="http://127.0.0.1:5000/"
+              class="bg-gray-100 mt-2 border-none w-full p-4 rounded-lg outline-none placeholder:text-zinc-400 cursor-not-allowed"
+            />
+          </div>
+
+          <div>
+            <label for="new-path" class="font-semibold text-sm text-zinc-500"
+              >Novo caminho: <span class="text-red-400 font-bold">*</span>
+            </label>
+
+            <input
+              required
+              type="text"
+              id="new-path"
+              name="new-path"
+              placeholder="Digite novo caminho desejado"
+              class="bg-gray-100 mt-2 border-none w-full p-4 rounded-lg outline-none"
+            />
+          </div>
+
+          <button
+            type="submit"
+            aria-label="Botão de confirmar a criação da nova URL"
+            class="bg-orange-500 hover:bg-orange-700 ease-in duration-200 rounded-lg p-4 text-md font-semibold text-white"
+          >
+            Criar nova URL
+          </button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

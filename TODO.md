@@ -1,0 +1,4 @@
+- []: Deve ser possível acessar a página de criação do Link;
+- []: Deve ser possível usar o formulário com os seguintes campos: Link original e Novo link;
+- []: Deve ser possível exibir o link para o usuário final copiar;
+- []: Deve ser possível acessar a página de redirecionamento do link gerado;
